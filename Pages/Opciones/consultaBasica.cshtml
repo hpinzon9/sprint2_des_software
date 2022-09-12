@@ -1,0 +1,34 @@
+﻿@page
+@model vistacuidadop.App.frotend.Pages.consultaBasicaModel
+@{
+}
+<div class="container-sm">
+    <div class="row m-auto">
+        <div class="col-4">
+            <h1>CONSULTAR UN CERDO</h1>
+            <form action="/Opciones/consultaBasica/" method="get">
+                <input type="text" class="form-control" id="id" name="id">
+                <input type="submit" class="btn btn-primary mt-3" value="buscar">
+            </form>
+        </div>
+        <div class="col-4 p-3 border rounded-3 shadow-lg">
+            @if (Model.cerditoBuscado != null) {
+            if (Model.cerditoBuscado.Length == 1) {
+            <h3>Cerdito no encontrado</h3>
+            } else{
+            <h3>@Model.cerditoBuscado[1]</h3>
+            <p>
+                <b>ID:</b> @Model.cerditoBuscado[0] <br>
+                <b>Nombre:</b> @Model.cerditoBuscado[2]<br>
+                <b>Especie:</b> @Model.cerditoBuscado[3]<br>
+                <b>Raza:</b> @Model.cerditoBuscado[4]<br>
+                <b>ID veterinario:</b> @Model.cerditoBuscado[5]<br>
+                <b>ID dueño:</b> @Model.cerditoBuscado[6]<br>
+            </p>
+            }
+            } else {
+            <h3>Ingresa un ID</h3>
+            }
+        </div>
+    </div>
+</div>

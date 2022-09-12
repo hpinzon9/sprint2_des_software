@@ -1,0 +1,28 @@
+﻿@page
+@model vistacuidadop.App.frotend.Pages.consultaCompletaModel
+@{
+}
+<h1>CONSULTAS Y REPORTES DE VETERINARIA PORCINA</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Color</th>
+        <th>Especie</th>
+        <th>Raza</th>
+        <th>ID veterinario</th>
+        <th>ID dueño</th>
+    </tr>
+    @foreach (var cerdito in Model.listaCerditos)
+    {
+    <tr>
+        <td>@cerdito[0]</td>
+        <td>@cerdito[1]</td>
+        <td>@cerdito[2]</td>
+        <td>@cerdito[3]</td>
+        <td>@cerdito[4]</td>
+        <td>@cerdito[5]</td>
+        <td>@cerdito[6]</td>
+    </tr>
+    }
+</table>
